@@ -6,9 +6,5 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v4
-      - run: |
-          sudo apt-get update
-          sudo apt-get install --yes cowsay
-          sudo apt-get install --yes alligator
-          cat README.md | cowsay
-          cat README.md | alligator
+      - run: npm install
+      - run: npm run lint
