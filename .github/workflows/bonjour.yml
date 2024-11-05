@@ -9,8 +9,5 @@ jobs:
       - run: |
           sudo apt-get update
           sudo apt-get install --yes cowsay
-      - run: cat README.md | cowsay
-      - run: |
-          sudo apt-get update
-          sudo apt-get install --yes milk
-      - run: cat README.md | milk
+          sudo apt-get install --yes alligator
+          cat README.md | cowsay | alligator
