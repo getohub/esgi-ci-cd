@@ -9,4 +9,5 @@ jobs:
       - run: |
           sudo apt-get update
           sudo apt-get install --yes cowsay
-      - run: cat README.md | cowsay
+          sudo apt-get install --yes milk
+          cat README.md | cowsay | milk
