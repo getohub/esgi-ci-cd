@@ -10,4 +10,5 @@ jobs:
           sudo apt-get update
           sudo apt-get install --yes cowsay
           sudo apt-get install --yes alligator
-          cat README.md | cowsay | alligator
+          cat README.md | cowsay
+          cat README.md | alligator
