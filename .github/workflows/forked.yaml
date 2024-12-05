@@ -1,0 +1,21 @@
+name: forked
+on:
+  - push
+jobs:
+  gitpod_container:
+    runs-on: ubuntu-22.04
+    env:
+      IMAGE_NAME: "mynode_gitpod"
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Lint Dockerfile with Hadolint
+        uses: hadolint/hadolint-action@v3.1.0
+        with:
+          dockerfile: ../../docker-forked/Dockerfile
+
+      - name: Build Docker image
+        run: docker image build --tag="${IMAGE_NAME}" ./
+
+      - name: Run npm lint
+        run: docker container run --volume="$(pwd)":"$(pwd)" "${IMAGE_NAME}" npm run lint
